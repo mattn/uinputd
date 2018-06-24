@@ -79,12 +79,14 @@ func main() {
 	var input *evdev.InputDevice
 	if device != "" {
 		for _, dev := range devs {
-			if dev.Name == device {
+			if verbose {
+				log.Println(dev.Name)
+			}
+			if input == nil && dev.Name == device {
 				input = dev
-				break
 			}
 		}
-	} else {
+	} else if len(devs) > 0 {
 		input = devs[0]
 	}
 
