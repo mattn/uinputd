@@ -93,6 +93,9 @@ func main() {
 	if input == nil {
 		log.Fatal("cannot open uinput device")
 	}
+	if verbose {
+		log.Println("connected", input.Name)
+	}
 
 	last := int64(0)
 	for {
