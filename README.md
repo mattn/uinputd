@@ -7,17 +7,20 @@ uinput daemon
 Run uinputd with specifying configuration file like below.
 
 ```
-$ uinputd -c ~/.config/uinputd
+$ uinputd
 ```
 
 A format of configuration file is:
 
 ```
-device: XX:XX:XX:XX:XX:XX
-press: echo PRESS
-release: echo RELEASE
-longpress: echo LONGPRESS
+- device: XX:XX:XX:XX:XX:XX
+  release: echo PLAY NEXT
+
+- device: YY:YY:YY:YY:YY:YY
+  release: echo PUSHED BUTTON
 ```
+
+Configuration file is located at `~/.config/uinput`.
 
 ## Installation
 
