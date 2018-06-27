@@ -60,7 +60,8 @@ func (c *Config) watch(wg *sync.WaitGroup) {
 	for {
 		ev, err := c.uinput.ReadOne()
 		if err != nil {
-			log.Fatal(err)
+			log.Print(err)
+			continue
 		}
 		if ev.Type != evdev.EV_KEY {
 			continue
