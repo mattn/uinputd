@@ -112,7 +112,7 @@ func main() {
 
 	for _, dev := range devs {
 		if verbose {
-			log.Println("found uinput device", dev.Name)
+			log.Printf("found uinput device %q : %q", dev.Name, dev.Phys)
 		}
 		for _, c := range cfg {
 			if dev.Phys == c.Device {
